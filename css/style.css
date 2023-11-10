@@ -1,53 +1,60 @@
 body {
-    background: #2E3440;
+  background: #2e3440;
 }
 
 @font-face {
-    font-family: "Comfortaa";
-    src: local("Comfortaa-VariableFont_wght.ttf");
-  }
-  
-  @font-face {
-    font-family: "Comfortaa Bolder";
-    src: url("./fonts/Comfortaa-Bold.ttf");
-    font-weight: bolder;
-  }
-  
-  @font-face {
-    font-family: "Comfortaa Bold";
-    src: url("./fonts/Comfortaa-SemiBold.ttf");
-    font-weight: bold;
-  }
-  
-  #number-window {
-    border: 1px;
-    border-radius: 8px;
-    border: solid;
-    border-color: #3882f6;
-    background-color: #4C566A;
-    height: 75px;
-    flex-shrink: 0;
-    flex-grow: 0;
-    margin: 10px;
-  }
-  
-  #num-display {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #978e48;
-    font-size: 32px;
-    max-width: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  .calc-window {
-    display: flex;
-    flex-direction: column;
-    background-color: #D8DEE9;
-    width: 600px;
-    height: 800px;
-  }
-  
-    
+  font-family: "Comfortaa";
+  src: local("Comfortaa-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "Comfortaa Bolder";
+  src: url("./fonts/Comfortaa-Bold.ttf");
+  font-weight: bolder;
+}
+
+@font-face {
+  font-family: "Comfortaa Bold";
+  src: url("./fonts/Comfortaa-SemiBold.ttf");
+  font-weight: bold;
+}
+
+#header-text {
+  display: flex;
+  justify-content: center;
+}
+
+#number-window {
+  border: 1px;
+  border-radius: 8px;
+  border: solid;
+  border-color: #3882f6;
+  background-color: #4c566a;
+  height: 75px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin: 10px;
+}
+
+#num-display {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #978e48;
+  font-size: 32px;
+  max-width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.calc-window {
+  display: flex;
+  flex-direction: column;
+  background-color: #d8dee9;
+  width: 600px;
+  height: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
