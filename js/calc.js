@@ -34,3 +34,7 @@ function clearCalc() {
 function operatorClick() {
   // code when an operator button is clickec
 }
+
+function operate(firstNum, secondNum, operator) {
+  // Takes 2 numbers and an operator then performs the appropiate call to the function to perform the operation
+}
