@@ -30,7 +30,7 @@ body {
   border: solid;
   border-color: #3882f6;
   background-color: #4c566a;
-  height: 75px;
+  height: 95px;
   flex-shrink: 0;
   flex-grow: 0;
   margin: 10px;
@@ -53,8 +53,35 @@ body {
   flex-direction: column;
   background-color: #d8dee9;
   width: 600px;
-  height: 800px;
+  height: 700px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
+  justify-content: space-between;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px;
+  gap: 5px;
+}
+
+button {
+  width: 140px;
+  height: 90px;
+}
+
+#divBtn {
+  float: right;
+  margin-right: 8px;
+}
+
+#clearBtn {
+  width: 428px;
+}
+
+#zeroBtn {
+  width: 284px;
 }
