@@ -53,7 +53,7 @@ body {
   flex-direction: column;
   background-color: #d8dee9;
   width: 600px;
-  height: 700px;
+  height: 670px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
@@ -71,6 +71,8 @@ body {
 button {
   width: 140px;
   height: 90px;
+  background-color: #ebcb8b;
+  border-radius: 8px;
 }
 
 #divBtn {
@@ -80,8 +82,17 @@ button {
 
 #clearBtn {
   width: 428px;
+  background-color: #8fbcbb;
 }
 
 #zeroBtn {
   width: 284px;
+}
+
+#divBtn,
+#mulBtn,
+#subBtn,
+#addBtn,
+#equalBtn {
+  background-color: #d08770;
 }
