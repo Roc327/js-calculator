@@ -31,6 +31,13 @@ function onNumClick(num) {
 
 function displayNumber(displayNum) {
   document.getElementById("numbers").innerHTML = displayNum;
+  if (displayNum.length > 25) {
+    document.getElementById("num-display").style.fontSize = "20px";
+  } else if (displayNum.length > 15) {
+    document.getElementById("num-display").style.fontSize = "32px";
+  } else if (displayNum.length <= 15) {
+    document.getElementById("num-display").style.fontSize = "48px";
+  }
 }
 
 function clearCalc() {
