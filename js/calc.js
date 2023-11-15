@@ -51,15 +51,48 @@ function clearCalc() {
 function operatorClick(operator) {
   operatorSelection = operator;
   if (operandNums === 1) {
-    operate(storedNum, displayNum);
+    operate(storedNum, displayNum, operator);
   } else {
     storedNum = displayNum;
     displayNum = "0";
     operandNums++;
-    displayNumber(displayNum);
+    // displayNumber(displayNum);
   }
 }
 
 function operate(firstNum, secondNum, operator) {
-  // Takes 2 numbers and an operator then performs the appropiate call to the function to perform the operation
+  switch (operator) {
+    case "/":
+      if (secondNum === "0") {
+        document.getElementById("numbers").innerHTML = "Error";
+        storedNum = "0";
+        displayNum = "0";
+        operandNums = 0;
+        break;
+      } else {
+        displayNum = divide(firstNum, secondNum);
+        displayNumber(displayNum);
+        storedNum = displayNum;
+        displayNum = "0";
+        break;
+      }
+    case "*":
+      displayNum = multiply(firstNum, secondNum);
+      displayNumber(displayNum);
+      storedNum = displayNum;
+      displayNum = "0";
+      break;
+    case "-":
+      displayNum = subtract(firstNum, secondNum);
+      displayNumber(displayNum);
+      storedNum = displayNum;
+      displayNum = "0";
+      break;
+    case "+":
+      displayNum = add(parseFloat(firstNum), parseFloat(secondNum));
+      displayNumber(displayNum);
+      storedNum = displayNum;
+      displayNum = "0";
+      break;
+  }
 }

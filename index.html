@@ -30,7 +30,7 @@
           <button id="sevenBtn" onClick="onNumClick('7')">7</button>
           <button id="eightBtn" onClick="onNumClick('8')">8</button>
           <button id="nineBtn" onClick="onNumClick('9')">9</button>
-          <button id="mulBtn" onClick="operatorClick('x')">X</button>
+          <button id="mulBtn" onClick="operatorClick('*')">X</button>
         </div>
 
         <div id="buttonRow3">
@@ -50,7 +50,12 @@
         <div id="buttonRow5">
           <button id="zeroBtn" onClick="onNumClick('0')">0</button>
           <button id="decBtn" onClick="onNumClick('.')">.</button>
-          <button id="equalBtn" onClick="operate()">=</button>
+          <button
+            id="equalBtn"
+            onClick="operate(storedNum, displayNum, operatorSelection)"
+          >
+            =
+          </button>
         </div>
       </div>
       <!--close of buttonContainer-->
