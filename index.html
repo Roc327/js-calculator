@@ -22,35 +22,35 @@
 
       <div class="buttonContainer">
         <div id="buttonRow1">
-          <button id="clearBtn">Clear</button>
-          <button id="divBtn">/</button>
+          <button id="clearBtn" onClick="clearCalc()">Clear</button>
+          <button id="divBtn" onClick="operatorClick('/')">/</button>
         </div>
 
         <div id="buttonRow2">
-          <button id="sevenBtn">7</button>
-          <button id="eightBtn">8</button>
-          <button id="nineBtn">9</button>
-          <button id="mulBtn">X</button>
+          <button id="sevenBtn" onClick="onNumClick('7')">7</button>
+          <button id="eightBtn" onClick="onNumClick('8')">8</button>
+          <button id="nineBtn" onClick="onNumClick('9')">9</button>
+          <button id="mulBtn" onClick="operatorClick('x')">X</button>
         </div>
 
         <div id="buttonRow3">
-          <button id="fourBtn">4</button>
-          <button id="fiveBtn">5</button>
-          <button id="sixBtn">6</button>
-          <button id="subBtn">-</button>
+          <button id="fourBtn" onClick="onNumClick('4')">4</button>
+          <button id="fiveBtn" onClick="onNumClick('5')">5</button>
+          <button id="sixBtn" onClick="onNumClick('6')">6</button>
+          <button id="subBtn" onClick="operatorClick('-')">-</button>
         </div>
 
         <div id="buttonRow4">
-          <button id="oneBtn">1</button>
-          <button id="twoBtn">2</button>
-          <button id="threeBtn">3</button>
-          <button id="addBtn">+</button>
+          <button id="oneBtn" onClick="onNumClick('1')">1</button>
+          <button id="twoBtn" onClick="onNumClick('2')">2</button>
+          <button id="threeBtn" onClick="onNumClick('3')">3</button>
+          <button id="addBtn" onClick="operatorClick('+')">+</button>
         </div>
 
         <div id="buttonRow5">
-          <button id="zeroBtn">0</button>
-          <button id="decBtn">.</button>
-          <button id="equalBtn">=</button>
+          <button id="zeroBtn" onClick="onNumClick('0')">0</button>
+          <button id="decBtn" onClick="onNumClick('.')">.</button>
+          <button id="equalBtn" onClick="operate()">=</button>
         </div>
       </div>
       <!--close of buttonContainer-->

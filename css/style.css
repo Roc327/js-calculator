@@ -40,12 +40,17 @@ body {
 #num-display {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #978e48;
-  font-size: 32px;
+  font-size: xxx-large;
   max-width: 100px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
   text-align: center;
+}
+
+#numbers {
+  display: flex;
+  justify-content: center;
 }
 
 .calc-window {
@@ -73,6 +78,7 @@ button {
   height: 90px;
   background-color: #ebcb8b;
   border-radius: 8px;
+  font-size: x-large;
 }
 
 #divBtn {
