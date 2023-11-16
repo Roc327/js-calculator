@@ -1,8 +1,8 @@
-let currNum = "0";
-let prevNum = "0";
+let currNum = "";
+let prevNum = "";
 let currOp = "";
 let prevOp = "";
-let result = "0";
+let result = "";
 
 function add() {
   return arguments[0] + arguments[1];
@@ -21,15 +21,21 @@ function divide() {
 }
 
 function onNumClick(num) {
-  //
+  currNum += num;
+  displayNumber(currNum);
 }
 
-function displayNumber() {
-  //
+function displayNumber(num) {
+  document.getElementById("numbers").innerHTML = num;
 }
 
 function clearCalc() {
-  //
+  currNum = "";
+  prevNum = "";
+  currOp = "";
+  prevOp = "";
+  result = "";
+  displayNumber("0");
 }
 
 function operatorClick(operator) {
