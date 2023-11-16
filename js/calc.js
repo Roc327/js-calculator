@@ -50,7 +50,7 @@ function clearCalc() {
 
 function operatorClick(operator) {
   operatorSelection = operator;
-  if (operandNums === 1) {
+  if (operandNums >= 1) {
     operate(storedNum, displayNum, operator);
   } else {
     storedNum = displayNum;
