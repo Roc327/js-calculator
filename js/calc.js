@@ -1,8 +1,10 @@
-let currNum = "";
-let prevNum = "";
+let displayNum = "";
+let currNum = 0;
+let prevNum = 0;
 let currOp = "";
 let prevOp = "";
-let result = "";
+let result = 0;
+let clearSwitch = 0;
 
 function add() {
   return arguments[0] + arguments[1];
@@ -21,8 +23,9 @@ function divide() {
 }
 
 function onNumClick(num) {
-  currNum += num;
-  displayNumber(currNum);
+  displayNum += num;
+  displayNumber(displayNum);
+  currNum = parseFloat(displayNum);
 }
 
 function displayNumber(num) {
@@ -30,16 +33,36 @@ function displayNumber(num) {
 }
 
 function clearCalc() {
-  currNum = "";
-  prevNum = "";
+  displayNum = "";
+  currNum = 0;
+  prevNum = 0;
   currOp = "";
   prevOp = "";
-  result = "";
+  result = 0;
   displayNumber("0");
 }
 
 function operatorClick(operator) {
-  //
+  if (clearSwitch === 0) {
+    currOp = operator;
+    prevNum = currNum;
+    currNum = 0;
+    displayNum = "";
+  } else {
+    currOp = operator;
+    prevNum = result;
+    currNum = 0;
+    displayNum = "";
+  }
+}
+
+function equalClick() {
+  operate(arguments[0], arguments[1], arguments[2]);
+  displayNumber(result);
+  prevNum = result;
+  currNum = 0;
+  currOp = "";
+  clearSwitch = 1;
 }
 
 function operate(firstNum, secondNum, operator) {
@@ -47,34 +70,23 @@ function operate(firstNum, secondNum, operator) {
     case "/":
       if (secondNum === "0") {
         document.getElementById("numbers").innerHTML = "Error";
-        storedNum = "0";
-        displayNum = "0";
-        operandNums = 0;
+        currNum = 0;
+        prevNum = 0;
+        currOp = "";
+        prevOp = "";
         break;
       } else {
-        displayNum = divide(firstNum, secondNum);
-        displayNumber(displayNum);
-        storedNum = displayNum;
-        displayNum = "0";
+        result = divide(firstNum, secondNum);
         break;
       }
     case "*":
-      displayNum = multiply(firstNum, secondNum);
-      displayNumber(displayNum);
-      storedNum = displayNum;
-      displayNum = "0";
+      result = multiply(firstNum, secondNum);
       break;
     case "-":
-      displayNum = subtract(firstNum, secondNum);
-      displayNumber(displayNum);
-      storedNum = displayNum;
-      displayNum = "0";
+      result = subtract(firstNum, secondNum);
       break;
     case "+":
-      displayNum = add(parseFloat(firstNum), parseFloat(secondNum));
-      displayNumber(displayNum);
-      storedNum = displayNum;
-      displayNum = "0";
+      result = add(parseFloat(firstNum), parseFloat(secondNum));
       break;
   }
 }
