@@ -39,6 +39,7 @@ function clearCalc() {
   currOp = "";
   prevOp = "";
   result = 0;
+  clearSwitch = 0;
   displayNumber("0");
 }
 
