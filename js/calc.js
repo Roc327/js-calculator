@@ -4,7 +4,7 @@ let prevNum = 0;
 let currOp = "";
 let prevOp = "";
 let result = 0;
-let clearSwitch = 0;
+let clearSwitch = false;
 
 function add() {
   return arguments[0] + arguments[1];
@@ -39,12 +39,12 @@ function clearCalc() {
   currOp = "";
   prevOp = "";
   result = 0;
-  clearSwitch = 0;
+  clearSwitch = false;
   displayNumber("0");
 }
 
 function operatorClick(operator) {
-  if (clearSwitch === 0) {
+  if (clearSwitch === false) {
     currOp = operator;
     prevNum = currNum;
     currNum = 0;
@@ -63,7 +63,14 @@ function equalClick() {
   prevNum = result;
   currNum = 0;
   currOp = "";
-  clearSwitch = 1;
+  displayNum = "";
+  clearSwitch = true;
+}
+
+function deleteClick() {
+  displayNum = displayNum.toString().slice(0, -1);
+  displayNumber(displayNum);
+  currNum = parseFloat(displayNum);
 }
 
 function operate(firstNum, secondNum, operator) {
@@ -75,6 +82,8 @@ function operate(firstNum, secondNum, operator) {
         prevNum = 0;
         currOp = "";
         prevOp = "";
+        result = 0;
+        displayNum = "";
         break;
       } else {
         result = divide(firstNum, secondNum);

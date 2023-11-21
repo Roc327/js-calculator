@@ -15,6 +15,7 @@
     <div class="calc-window">
       <div id="number-window">
         <div id="num-display">
+          <div id="prevNumbers"></div>
           <div id="numbers">0</div>
         </div>
       </div>
@@ -23,6 +24,7 @@
       <div class="buttonContainer">
         <div id="buttonRow1">
           <button id="clearBtn" onClick="clearCalc()">Clear</button>
+          <button id="delBtn" onClick="deleteClick()">Del</button>
           <button id="divBtn" onClick="operatorClick('/')">/</button>
         </div>
 
@@ -50,7 +52,9 @@
         <div id="buttonRow5">
           <button id="zeroBtn" onClick="onNumClick('0')">0</button>
           <button id="decBtn" onClick="onNumClick('.')">.</button>
-          <button id="equalBtn" onClick="equalClick(prevNum, currNum, currOp)">
+          <button id="equalBtn" onClick="equalClick(prevNum,
+                                        currNum,
+                                        currOp)">
             =
           </button>
         </div>
