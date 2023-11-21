@@ -23,6 +23,7 @@ function divide() {
 }
 
 function onNumClick(num) {
+  if (num === "." && displayNum.includes(".")) return;
   displayNum += num;
   displayNumber(displayNum);
   currNum = parseFloat(displayNum);
@@ -30,6 +31,13 @@ function onNumClick(num) {
 
 function displayNumber(num) {
   document.getElementById("numbers").innerHTML = num;
+  if (num.length > 25) {
+    document.getElementById("num-display").style.fontSize = "20px";
+  } else if (num.length > 15) {
+    document.getElementById("num-display").style.fontSize = "32px";
+  } else if (num.length <= 15) {
+    document.getElementById("num-display").style.fontSize = "48px";
+  }
 }
 
 function clearCalc() {
@@ -58,13 +66,21 @@ function operatorClick(operator) {
 }
 
 function equalClick() {
-  operate(arguments[0], arguments[1], arguments[2]);
-  displayNumber(result);
-  prevNum = result;
-  currNum = 0;
-  currOp = "";
-  displayNum = "";
-  clearSwitch = true;
+  if (currNum === 0) {
+    displayNum = "";
+    document.getElementById("numbers").innerHTML = "Error";
+    displayNumber("Error");
+    prevNum = null;
+    currNum = null;
+  } else {
+    operate(arguments[0], arguments[1], arguments[2]);
+    displayNumber(result);
+    prevNum = result;
+    currNum = 0;
+    currOp = "";
+    displayNum = "";
+    clearSwitch = true;
+  }
 }
 
 function deleteClick() {
@@ -73,12 +89,21 @@ function deleteClick() {
   currNum = parseFloat(displayNum);
 }
 
-function operate(firstNum, secondNum, operator) {
-  switch (operator) {
+function operate(prev, curr, op) {
+  switch (op) {
     case "/":
-      if (secondNum === "0") {
+      result = divide(prev, curr);
+      displayNumber(result);
+      prevNum = result;
+      currNum = null;
+      break;
+
+      /*
+      if (prev === 0 || curr === 0) {
+        console.log("div 0 switch");
+        clearCalc();
         document.getElementById("numbers").innerHTML = "Error";
-        currNum = 0;
+        currNum = null;
         prevNum = 0;
         currOp = "";
         prevOp = "";
@@ -86,17 +111,18 @@ function operate(firstNum, secondNum, operator) {
         displayNum = "";
         break;
       } else {
-        result = divide(firstNum, secondNum);
+        result = divide(prev, curr);
         break;
       }
+      */
     case "*":
-      result = multiply(firstNum, secondNum);
+      result = multiply(curr, prev);
       break;
     case "-":
-      result = subtract(firstNum, secondNum);
+      result = subtract(prev, curr);
       break;
     case "+":
-      result = add(parseFloat(firstNum), parseFloat(secondNum));
+      result = add(parseFloat(curr), parseFloat(prev));
       break;
   }
 }
