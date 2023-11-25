@@ -97,24 +97,6 @@ function operate(prev, curr, op) {
       prevNum = result;
       currNum = null;
       break;
-
-      /*
-      if (prev === 0 || curr === 0) {
-        console.log("div 0 switch");
-        clearCalc();
-        document.getElementById("numbers").innerHTML = "Error";
-        currNum = null;
-        prevNum = 0;
-        currOp = "";
-        prevOp = "";
-        result = 0;
-        displayNum = "";
-        break;
-      } else {
-        result = divide(prev, curr);
-        break;
-      }
-      */
     case "*":
       result = multiply(curr, prev);
       break;
